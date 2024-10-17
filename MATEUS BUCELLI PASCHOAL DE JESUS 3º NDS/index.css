@@ -1,0 +1,412 @@
+/* Reseta padding, margin e define box-sizing globalmente */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos do header principal */
+header {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradiente sutil */
+    color: #333;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #007bff; /* Detalhe azul */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header-logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    transition: transform 0.3s; /* Efeito de transição */
+}
+
+.header-logo img:hover {
+    transform: scale(1.1); /* Aumenta ao passar o mouse */
+}
+
+.header-links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.header-link {
+    color: #007bff; /* Azul */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s, text-shadow 0.3s; /* Transições suaves */
+}
+
+.header-link:hover {
+    color: #0056b3; /* Cor ao passar o mouse */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+
+/* Estilos do segundo header */
+.sub-header {
+    background-color: #e6f7ff; /* Azul claro */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.sub-header h2 {
+    margin-bottom: 10px;
+    color: #007bff; /* Azul */
+}
+
+.sub-header p {
+    color: #333;
+}
+
+/* Estilos do main */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Estilos da seção de esportes */
+.sport-section {
+    text-align: center;
+}
+
+/* Estilos dos botões */
+.sport-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.sport-button {
+    display: inline-block;
+    padding: 30px; /* Tamanho do botão */
+    background-color: #0077ff; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border: none; /* Sem borda */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.sport-button:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+    background-color: #03448d; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+/* Estilos do footer */
+footer {
+    position: fixed;
+    bottom: 0; /* Gruda o footer na parte inferior */
+    left: 0;
+    right: 0;
+    padding: 20px 0; /* Espaço interno do footer */
+    background-color: #007BFF; /* Fundo leve para destacar */
+    text-align: center; /* Centraliza o texto no footer */
+    color: #f2f2f2;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-links ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .header-link {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 10px; /* Reduz o padding do main */
+    }
+
+    .sport-buttons {
+        width: 150px; /* Ajusta a largura dos botões em telas menores */
+        font-size: 1.2em; /* Ajusta o tamanho da fonte */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo img {
+        width: 60px; /* Reduz o tamanho do logo em telas muito pequenas */
+        height: 60px;
+    }
+}
+
+/* Estilos de caixas de texto */
+.text-box, .text-box-esportes {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    border: 2px solid #007BFF; /* Borda azul */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px 0; /* Margem acima e abaixo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow-y: auto; /* Permite rolagem se o conteúdo for maior */
+}
+
+.text-box-esportes {
+    height: auto; /* Para se ajustar ao conteúdo */
+    font-size: 1.2em; /* Aumenta o tamanho do texto */
+}
+
+.text-box-esportes::before {
+    content: ""; /* Cria um quadrado vazio */
+    position: absolute; /* Para posicionamento */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 123, 255, 0.2); /* Cor do quadrado atrás do texto */
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+    z-index: -1; /* Coloca o quadrado atrás do texto */
+}
+
+/* Estilos do slider */
+section.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.slider-content {
+    width: 400%;
+    height: auto;
+    display: flex;
+    transition: transform 0.5s ease; /* Transição suave ao mover */
+}
+
+.slider-content input,
+.img-mobile {
+    display: none;
+}
+
+.slide-box {
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s; /* Efeito de transição */
+}
+
+.slide-box img {
+    width: 100%;
+    border-radius: 8px; /* Bordas arredondadas nas imagens */
+}
+
+/* Navegação do slider */
+.nav-manual, .nav-auto {
+    position: absolute;
+    width: 100%;
+    margin-top: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn,
+.nav-auto div {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+.nav-manual .manual-btn:not(:last-child),
+.nav-auto div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover {
+    background-color: #007BFF;
+    transform: scale(1.1); /* Aumenta ao passar o mouse */
+}
+
+/* Estilos da navegação automática */
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3 {
+    background-color: #007BFF;
+}
+
+#radio1:checked ~ .primeiro {
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro {
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro {
+    margin-left: -50%;
+}
+
+/* Respons
+
+/* Estilos do slider */
+section.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+    position: relative; /* Para posicionar os botões relativos ao slider */
+}
+
+.slider-content {
+    width: 400%;
+    height: auto;
+    display: flex;
+    transition: transform 0.5s ease; /* Transição suave ao mover */
+}
+
+/* Ajuste os botões do carrossel */
+.nav-manual, .nav-auto {
+    position: absolute;
+    width: 100%;
+    bottom: 20px; /* Ajuste a distância do fundo do slider */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn,
+.nav-auto div {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+/* Aumentar a margem acima das caixas de texto */
+.text-box,
+.text-box-esportes {
+    margin-top: 40px; /* Aumenta a margem acima das caixas de texto */
+}
+
+.carousel img {
+    width: 100%; /* Imagem ocupa 100% do contêiner */
+    height: 400px; /* Defina uma altura fixa para todas as imagens */
+    object-fit: cover; /* Cobre o espaço mantendo a proporção */
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+}
+
+/* carrossel */
+.text-box-esportes {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Para centralizar */
+}
+.sport-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.carousel-container {
+    position: relative;
+    width: 90%; /* Largura responsiva */
+    max-width: 800px; /* Largura máxima do carrossel */
+    margin: 20px auto;
+    overflow: hidden; /* Esconde parte da imagem que sai do contêiner */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease; /* Suaviza a transição */
+}
+.carousel-item {
+    min-width: 100%; /* Cada item ocupa 100% do contêiner */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+.carousel img {
+    width: 100%; /* Imagem ocupa 100% do contêiner */
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 123, 255, 0.8); /* Fundo semitransparente */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1; /* Para estar acima do carrossel */
+}
+.carousel-button.prev {
+    left: 10px; /* Botão anterior à esquerda */
+}
+.carousel-button.next {
+    right: 10px; /* Botão próximo à direita */
+}
+
+
+.sport-button-container {
+    text-align: center; /* Centraliza o botão */
+    margin: 20px 0; /* Margem acima e abaixo do botão */
+}
+
+.sport-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sport-button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}

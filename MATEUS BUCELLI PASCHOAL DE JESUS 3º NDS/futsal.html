@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futsal - Educação Física</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="60 anos.jpeg" alt="Logo da empresa">
+        </div>
+        <nav class="header-links">
+            <ul>
+                <li><a href="index.html" class="header-link">Início</a></li>
+                <li><a href="Basquete.html" class="header-link">Basquete</a></li>
+                <li><a href="Volei.html" class="header-link">Vôlei</a></li>
+                <li><a href="Futsal.html" class="header-link">Futsal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="text-box">
+            <h2>Futsal</h2>
+            <p>O futsal é uma variante do futebol, jogado em campo coberto e com cinco jogadores por equipe, sendo muito popular em escolas e clubes.</p>
+            <p>Regras Básicas:</p>
+            <ul>
+                <li>Os jogos são divididos em dois tempos de 20 minutos.</li>
+                <li>O goleiro não pode segurar a bola por mais de 4 segundos.</li>
+                <li>Faltas acumuladas resultam em tiro livre direto.</li>
+            </ul>
+            <p>Aprenda mais sobre as técnicas e a história do futsal!</p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-item active">
+                    <img src="volei 2.avif" alt="Basquete" />
+                </div>
+                <div class="carousel-item active">
+                    <img src="volei 3.jpg" alt="Vôlei" />
+                </div>
+                <div class="carousel-item active">
+                    <img src="volei.jpg" alt="Futsal" />
+                </div>
+            </div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+
+        <div class="sport-button-container">
+            <a href="index.html" class="sport-button">Voltar ao Início</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Trabalho Final. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Mateus B. Paschoal de Jesus</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const slides = document.querySelectorAll('.carousel-item');
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            const offset = -currentSlide * 100; // Cada item ocupa 100%
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
